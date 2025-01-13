@@ -1,5 +1,6 @@
 package zawkin.me.obliquo.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +15,12 @@ public class AuthController {
     private UserService service;
 
     @PostMapping("/register")
-    private ResponseEntity<Boolean> register(@Valid @RequestBody UserDTO user) {
-        return ResponseEntity.ok(service.registration(user));
+    private ResponseEntity<Boolean> register(@Valid @RequestBody UserDTO user, HttpServletRequest request) {
+        return ResponseEntity.ok(service.registration(user, request));
     }
 
     @PostMapping("/login")
-    private ResponseEntity<Boolean> login(@RequestBody UserDTO user){
-        return ResponseEntity.ok(service.login(user));
+    private ResponseEntity<Boolean> login(@RequestBody UserDTO user, HttpServletRequest request) {
+        return ResponseEntity.ok(service.login(user, request));
     }
 }
