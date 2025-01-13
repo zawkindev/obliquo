@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ObliquoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ObliquoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ObliquoApplication.class, args);
+    }
 
 }
